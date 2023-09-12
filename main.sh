@@ -16,7 +16,7 @@ do
     if gcloud services list --enabled --filter="NAME:compute.googleapis.com" --format="value(NAME)" | grep -q "compute.googleapis.com"; then
         echo "Compute API is enabled in project - $i"
         gcloud compute instances list --format="table[no-heading](name,zone)" | tail -n +2 | while read -r name zone; do
-            python3 retrieve-compute-engine-details.py "$i" "$name" "$zone" >> compute-engine-details.csv
+            python3 main.py "$i" "$name" "$zone" >> compute-engine-details.csv
         done
     else
         echo "Compute API is not enabled in project - $i"
