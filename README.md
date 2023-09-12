@@ -10,3 +10,9 @@
 ```
  pip3 install google-api-python-client oauth2client
 ```
+
+# How to run
+
+```
+bash main.sh
+```
